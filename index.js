@@ -3,7 +3,6 @@ const errorHandler = require("./middleware/errorHandler");
 const { default: mongoose } = require("mongoose");
 const connectDb = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
-const url = "mongodb+srv://admin:admin@cluster0.cfeljvx.mongodb.net/user-login";
 
 // mongoose
 //   .connect(url)
