@@ -21,6 +21,7 @@ const registerUser = asyncHandler(async (req, res) => {
   // Hashpassword
 
   const hashedPassword = await bcrypt.hash(password, 10);
+  console.log("The struggle is real");
   console.log("Hashed password", hashedPassword);
   const user = await User.create({
     name,
