@@ -1,6 +1,7 @@
 const express = require("express");
 const errorHandler = require("./middleware/errorHandler");
 const { default: mongoose } = require("mongoose");
+const cors = require("cors");
 const connectDb = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
 
@@ -14,6 +15,11 @@ const dotenv = require("dotenv").config();
 //   });
 connectDb();
 const app = express();
+app.use(cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 const port = process.env.PORT || 7000;
 
